@@ -9,20 +9,20 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class RecursoTecnologico
     {
         //ATRIBUTOS
-        private int numeroRT;
-        private DateTime fechaAlta;
-        private string imagenes;
-        private int periodicidadManPrev;
-        private int duracionManPrev;
-        private int fraccionHorarioTurnos;
-        private List<CaracteristicaRecurso> caracteristicaRecurso;
-        private TipoRecursoTecnologico tipoRecurso;
-        private Modelo modeloDelRT;
-        private List<Mantenimiento> mantenimientos;
-        private List<HorarioRT> disponibilidad;
-        private List<CambioEstadoRT> cambioEstadoRT;
-        private List<Turno> turnos;
-        private CentroDeInvestigacion centroInvestigacion;
+        public int numeroRT { get; set; }
+        public DateTime fechaAlta { get; set; }
+        public string imagenes { get; set; }
+        public int periodicidadManPrev { get; set; }
+        public int duracionManPrev { get; set; }
+        public int fraccionHorarioTurnos { get; set; }
+        private List<CaracteristicaRecurso> caracteristicaRecurso { get; set; }
+        public TipoRecursoTecnologico tipoRecurso { get; set; }
+        public Modelo modeloDelRT { get; set; }
+        private List<Mantenimiento> mantenimientos { get; set; }
+        private List<HorarioRT> disponibilidad { get; set; }
+        public List<CambioEstadoRT> cambioEstadoRT { get; set; }
+        public List<Turno> turnos { get; set; }
+        public CentroDeInvestigacion centroInvestigacion { get; set; }
 
 
         //METODOS
@@ -36,6 +36,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.cambioEstadoRT = cambioEstadoRT;
             this.turnos = turnos;
             
+        }
+
+        public RecursoTecnologico()
+        {
         }
 
         // --> Retorna True si el tipoRecurso pasado como parametro coincide con el tipoRecurso de este Recurso

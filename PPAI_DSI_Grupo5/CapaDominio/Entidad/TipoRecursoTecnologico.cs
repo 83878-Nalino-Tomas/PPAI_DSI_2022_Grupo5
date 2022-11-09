@@ -5,9 +5,9 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class TipoRecursoTecnologico
     {
         //ATRIBUTOS
-        private string nombre;
-        private string descripcion;
-        private List<Caracteristica> caracteristicas;
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public List<Caracteristica> caracteristicas { get; set; }
 
         //METODOS
 

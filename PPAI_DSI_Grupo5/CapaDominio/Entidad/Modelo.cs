@@ -7,7 +7,8 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Modelo
     {
         //ATRIBUTOS
-        private string nombre;
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
 
 
         //METODOS
@@ -16,6 +17,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public Modelo(string nombre)
         {
             this.nombre = nombre;
+        }
+
+        public Modelo()
+        {
         }
 
         // --> Devuelve el nombre de la marca de estre producto

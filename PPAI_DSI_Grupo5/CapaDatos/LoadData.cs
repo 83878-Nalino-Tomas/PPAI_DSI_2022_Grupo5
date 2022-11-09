@@ -23,13 +23,13 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         public static Sesion sesionActual = new Sesion(fechaFin, fechaInicio, user);
 
         //Tipos de recursos en el sistema
-        public static TipoRecursoTecnologico tipoRecurso1 = new TipoRecursoTecnologico("Microscopio", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso2 = new TipoRecursoTecnologico("Balanza de precision ", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso3 = new TipoRecursoTecnologico("Centrifugador", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso4 = new TipoRecursoTecnologico("Mixer", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso5 = new TipoRecursoTecnologico("Horno", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso6 = new TipoRecursoTecnologico("Resonador magnético", "Descripcion");
-        public static TipoRecursoTecnologico tipoRecurso7 = new TipoRecursoTecnologico("Equipamiento de cómputo de datos de alto rendimiento", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso1 = new TipoRecursoTecnologico("Microscopio", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso2 = new TipoRecursoTecnologico("Balanza de precision ", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso3 = new TipoRecursoTecnologico("Centrifugador", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso4 = new TipoRecursoTecnologico("Mixer", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso5 = new TipoRecursoTecnologico("Horno", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso6 = new TipoRecursoTecnologico("Resonador magnético", "Descripcion");
+        public static TipoRecursoTecnologicoDAO tipoRecurso7 = new TipoRecursoTecnologico("Equipamiento de cómputo de datos de alto rendimiento", "Descripcion");
 
         //Modelos en el sistema
         public static Modelo modelo = new Modelo("XZ3343");
@@ -214,9 +214,9 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             return list;
         }
 
-        public static List<TipoRecursoTecnologico> loadTiposRecursoTecnologico()
+        public static List<TipoRecursoTecnologicoDAO> loadTiposRecursoTecnologico()
         {
-            List<TipoRecursoTecnologico> listaTipoRecursos = new List<TipoRecursoTecnologico>();
+            List<TipoRecursoTecnologicoDAO> listaTipoRecursos = new List<TipoRecursoTecnologicoDAO>();
             listaTipoRecursos.Add(tipoRecurso1);
             listaTipoRecursos.Add(tipoRecurso2);
             listaTipoRecursos.Add(tipoRecurso3);

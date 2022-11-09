@@ -7,11 +7,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Turno
     {
         //ATRIBUTOS
-        private DateTime fechaGeneracion;
-        private DayOfWeek diaSemana;
-        private DateTime fechaHoraInicio;
-        private DateTime fechaHoraFin;
-        private List<CambioEstadoTurno> cambioEstadoTurno;
+        public DateTime fechaGeneracion { get; set; }
+        public DayOfWeek diaSemana { get; set; }
+        public DateTime fechaHoraInicio { get; set; }
+        public DateTime fechaHoraFin { get; set; }
+        public List<CambioEstadoTurno> cambioEstadoTurno { get; set; }
 
         // --> Metodo Constructor
         public Turno(DateTime fechaGeneracion, DayOfWeek diaSemana, DateTime fechaHoraInicio, DateTime fechaHoraFin, List<CambioEstadoTurno> cambioEstadoTurno)
@@ -21,6 +21,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.fechaHoraInicio = fechaHoraInicio;
             this.fechaHoraFin = fechaHoraFin;
             this.cambioEstadoTurno = cambioEstadoTurno;
+        }
+
+        public Turno()
+        {
         }
 
         //--> Validacion de si la fechaInicio del turno es posterior a la fecha pasada como parametro
