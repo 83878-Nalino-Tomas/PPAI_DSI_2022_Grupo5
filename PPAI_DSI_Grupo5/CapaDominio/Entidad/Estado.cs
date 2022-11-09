@@ -5,9 +5,9 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Estado
     {
         //ATRIBUTOS
-        private string nombre;
-        private string descripcion;
-        private string ambito;
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public string ambito { get; set; }
         private string esCancelable;
         private string es_Reservable;
 
@@ -20,6 +20,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.ambito = ambito;
+        }
+
+        public Estado()
+        {
         }
 
         // --> Devuelve si el estado es RESERVADO

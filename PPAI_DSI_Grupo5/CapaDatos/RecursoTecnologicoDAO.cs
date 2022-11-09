@@ -24,7 +24,9 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 RecursoTecnologico recurso = new RecursoTecnologico();
                 recurso.numeroRT = int.Parse(res.Rows[i]["numeroRT"].ToString());
                 recurso.tipoRecurso = TipoRecursoTecnologicoDAO.getTipoRecurso(res.Rows[i]["tipoRecurso"].ToString());
-                recurso.modeloDelRT = ModeloDAO.getTipoRecurso(res.Rows[i]["descripcion"].ToString());
+                recurso.modeloDelRT = ModeloDAO.getModelo(res.Rows[i]["modeloDelRT"].ToString());
+                recurso.turnos = TurnoDAO.getTurnosParaRecurso(recurso.numeroRT);
+                recurso.cambioEstadoRT = CambioEstadoDAO.getCambiosParaRecurso(recurso.numeroRT);
                 recursos.Add(recurso);
             }
             return recursos;
