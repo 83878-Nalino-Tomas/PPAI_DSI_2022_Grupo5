@@ -10,13 +10,13 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Usuario
     {
         //ATRIBUTOS
-        private string nombreUsuario;
-        private string clave;
-        private bool habilitado;
-        PersonalCientifico cientifico;
+        public string nombreUsuario { get; set; }
+        public string clave { get; set; }
+        public bool habilitado { get; set; }
+        public PersonalCientifico cientifico { get; set; }
 
         //METODOS
-        
+
         // --> Metodo Constructor
         public Usuario(string nombreUsuario, string clave, bool habilitado, PersonalCientifico cientifico)
         {
@@ -32,6 +32,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.nombreUsuario = nombreUsuario;
             this.clave = clave;
             this.habilitado = habilitado;
+        }
+
+        public Usuario()
+        {
         }
 
         //Getters&Setters

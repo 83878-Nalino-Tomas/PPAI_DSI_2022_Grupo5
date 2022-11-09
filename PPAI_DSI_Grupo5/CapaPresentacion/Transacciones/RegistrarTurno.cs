@@ -27,7 +27,7 @@ namespace PPAI_DSI_Grupo5.Presentacion.Transacciones
         public RegistrarTurno()
         {
             InitializeComponent();
-            Sesion sesion = LoadData.loadSesion();
+            Sesion sesion = SesionDAO.getSesionActual();
             ventana = new AltaTurno();
             gestor = new GestorReservaDeTurno(this, ventana, sesion);
             gestor.nuevaReservaTurno();

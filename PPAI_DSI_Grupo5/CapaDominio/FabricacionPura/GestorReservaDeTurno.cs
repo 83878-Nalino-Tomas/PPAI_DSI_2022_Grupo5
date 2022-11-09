@@ -1,16 +1,12 @@
-﻿using PPAI_DSI_Grupo5.CapaDominio.Entidad;
-using PPAI_DSI_Grupo5.CapaDatos;
+﻿using PPAI_DSI_Grupo5.CapaDatos;
+using PPAI_DSI_Grupo5.CapaDominio.Entidad;
+using PPAI_DSI_Grupo5.Presentacion.ABM_Turno;
+using PPAI_DSI_Grupo5.Presentacion.Transacciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
-using Twilio;
-using Twilio.Rest.Api.V2010.Account;
-using Twilio.Types;
-using PPAI_DSI_Grupo5.Presentacion.Transacciones;
-using PPAI_DSI_Grupo5.Presentacion.ABM_Turno;
 
 namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
 {
@@ -27,7 +23,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
         private Dictionary<string, List<TurnoModel>> turnosOrdenados;
         private PersonalCientifico cientificoLogueado;
         private Turno turnoSeleccionado;
-        private List<RecursoTecnologico> listaRecursoTecnologicosDisponibles; 
+        private List<RecursoTecnologico> listaRecursoTecnologicosDisponibles;
         private List<Turno> listaTurnosRTSeleccionado;
         private RegistrarTurno ventanaRegistrarTurno;
         private AltaTurno ventanaAltaTurno;
@@ -110,7 +106,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
         // --> Ordena la lista por CI
         public void agruparRTPorCentroInvestigacion()
         {
-            listaRecursosMuestra.OrderBy(x => x.getCentroInvestigacion());   
+            listaRecursosMuestra.OrderBy(x => x.getCentroInvestigacion());
         }
 
         // --> Asignacion de colores
@@ -288,7 +284,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
             string email = obtenerMailCientifico();
             string error = "Gmail: acceso denegado.";
             var mensaje = new StringBuilder("Se registro el turno del Recurso");
-            interfazNotificacion.enviarMail(mensaje,email,recursoTecnologicoSeleccionado.getNumeroRT().ToString(),turnoSeleccionado.getfechaTurno().ToString(),out error);
+            interfazNotificacion.enviarMail(mensaje, email, recursoTecnologicoSeleccionado.getNumeroRT().ToString(), turnoSeleccionado.getfechaTurno().ToString(), out error);
         }
 
         // -> Finaliza Boundary
