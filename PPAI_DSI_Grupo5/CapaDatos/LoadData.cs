@@ -22,15 +22,6 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         public static Usuario user = new Usuario("ramonRoldan", "root", true, cientifico1);
         public static Sesion sesionActual = new Sesion(fechaFin, fechaInicio, user);
 
-        //Tipos de recursos en el sistema
-        public static TipoRecursoTecnologicoDAO tipoRecurso1 = new TipoRecursoTecnologico("Microscopio", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso2 = new TipoRecursoTecnologico("Balanza de precision ", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso3 = new TipoRecursoTecnologico("Centrifugador", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso4 = new TipoRecursoTecnologico("Mixer", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso5 = new TipoRecursoTecnologico("Horno", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso6 = new TipoRecursoTecnologico("Resonador magnético", "Descripcion");
-        public static TipoRecursoTecnologicoDAO tipoRecurso7 = new TipoRecursoTecnologico("Equipamiento de cómputo de datos de alto rendimiento", "Descripcion");
-
         //Modelos en el sistema
         public static Modelo modelo = new Modelo("XZ3343");
         public static Modelo modelo1 = new Modelo("AAA3343");
@@ -115,45 +106,6 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         public static readonly AsignacionCientificoCI acci3 = new AsignacionCientificoCI(fechaInicio, fechaFin, cientifico3);
         public static readonly AsignacionCientificoCI acci4 = new AsignacionCientificoCI(fechaInicio, fechaFin, cientifico4);
 
-        //Centros de Investigacion en el sistema
-        public static CentroDeInvestigacion centro1 = new CentroDeInvestigacion("Centro FCEFyN", "FCEFyN", "Chile 215", 7, loadRecursosTecnologicos(), crearAsignacionCientifico());
-        public static CentroDeInvestigacion centro2 = new CentroDeInvestigacion("Centro F.C.M.", "Facultad de Ciencias Médicas", " Blvd. de la Reforma 197", 3, loadRecursosTecnologicos(), crearAsignacionCientifico());
-        public static CentroDeInvestigacion centro3 = new CentroDeInvestigacion("Centro F.O.", "Facultad de Odontología (F.O.)", "Haya de la Torre S/N, X5000", 5, loadRecursosTecnologicos(), crearAsignacionCientifico());
-
-        //Recursos tecnologicos en el sistema
-        public static  RecursoTecnologico rt1 = new RecursoTecnologico(1, tipoRecurso1, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static  RecursoTecnologico rt2 = new RecursoTecnologico(2, tipoRecurso4, modelo6, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static  RecursoTecnologico rt3 = new RecursoTecnologico(3, tipoRecurso3, modelo2, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt4 = new RecursoTecnologico(4, tipoRecurso2, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static RecursoTecnologico rt5 = new RecursoTecnologico(5, tipoRecurso5, modelo5, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt6 = new RecursoTecnologico(6, tipoRecurso6, modelo3, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt7 = new RecursoTecnologico(7, tipoRecurso7, modelo1, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt8 = new RecursoTecnologico(1, tipoRecurso1, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static RecursoTecnologico rt9 = new RecursoTecnologico(2, tipoRecurso4, modelo6, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt10 = new RecursoTecnologico(3, tipoRecurso3, modelo2, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt11 = new RecursoTecnologico(4, tipoRecurso2, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static RecursoTecnologico rt12 = new RecursoTecnologico(5, tipoRecurso5, modelo5, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt13 = new RecursoTecnologico(6, tipoRecurso6, modelo3, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt14 = new RecursoTecnologico(7, tipoRecurso7, modelo1, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt15 = new RecursoTecnologico(1, tipoRecurso1, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static RecursoTecnologico rt16 = new RecursoTecnologico(2, tipoRecurso4, modelo6, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt17 = new RecursoTecnologico(3, tipoRecurso3, modelo2, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt18 = new RecursoTecnologico(4, tipoRecurso2, modelo4, crearCambioEstadoRTsDisponible(), crearListaTurnos());
-        public static RecursoTecnologico rt19 = new RecursoTecnologico(5, tipoRecurso5, modelo5, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt20 = new RecursoTecnologico(6, tipoRecurso6, modelo3, crearCambioEstadoRTsReservable(), crearListaTurnos());
-        public static RecursoTecnologico rt21 = new RecursoTecnologico(7, tipoRecurso7, modelo1, crearCambioEstadoRTsReservable(), crearListaTurnos());
-
-
-        public static List<CentroDeInvestigacion> listarCentros()
-        {
-            var centros = new List<CentroDeInvestigacion>();
-            centros.Add(centro1);
-            centros.Add(centro2);
-            centros.Add(centro3);
-
-            return centros;
-        }
-
         public static List<Estado> loadEstados()
         {
             List<Estado> listaEstados = new List<Estado>();
@@ -214,21 +166,6 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             return list;
         }
 
-        public static List<TipoRecursoTecnologicoDAO> loadTiposRecursoTecnologico()
-        {
-            List<TipoRecursoTecnologicoDAO> listaTipoRecursos = new List<TipoRecursoTecnologicoDAO>();
-            listaTipoRecursos.Add(tipoRecurso1);
-            listaTipoRecursos.Add(tipoRecurso2);
-            listaTipoRecursos.Add(tipoRecurso3);
-            listaTipoRecursos.Add(tipoRecurso4);
-            listaTipoRecursos.Add(tipoRecurso5);
-            listaTipoRecursos.Add(tipoRecurso6);
-            listaTipoRecursos.Add(tipoRecurso7);
-
-
-            return listaTipoRecursos;
-        }
-
         public static List<CambioEstadoTurno> crearCambioEstadoTurnosReservado()
         {
             List<CambioEstadoTurno> listaCambioEstados = new List<CambioEstadoTurno>();
@@ -270,75 +207,6 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             return listaCambioEstados;
 
         }
-
-        internal static List<RecursoTecnologico> loadRecursosTecnologicosC1()
-        {
-            List<RecursoTecnologico> listaRecursos = new List<RecursoTecnologico>();
-            listaRecursos.Add(rt1);
-            listaRecursos.Add(rt2);
-            listaRecursos.Add(rt3);
-            listaRecursos.Add(rt4);
-            listaRecursos.Add(rt5);
-            listaRecursos.Add(rt6);
-            listaRecursos.Add(rt7);
-            return listaRecursos;
-        }
-
-        internal static List<RecursoTecnologico> loadRecursosTecnologicosC2()
-        {
-            List<RecursoTecnologico> listaRecursos = new List<RecursoTecnologico>();
-            listaRecursos.Add(rt8);
-            listaRecursos.Add(rt9);
-            listaRecursos.Add(rt10);
-            listaRecursos.Add(rt11);
-            listaRecursos.Add(rt12);
-            listaRecursos.Add(rt13);
-            listaRecursos.Add(rt14);
-            return listaRecursos;
-        }
-
-        internal static List<RecursoTecnologico> loadRecursosTecnologicosC3()
-        {
-            List<RecursoTecnologico> listaRecursos = new List<RecursoTecnologico>();
-            listaRecursos.Add(rt14);
-            listaRecursos.Add(rt15);
-            listaRecursos.Add(rt16);
-            listaRecursos.Add(rt17);
-            listaRecursos.Add(rt18);
-            listaRecursos.Add(rt19);
-            listaRecursos.Add(rt20);
-            listaRecursos.Add(rt21);
-            return listaRecursos;
-        }
-
-        internal static List<RecursoTecnologico> loadRecursosTecnologicos()
-        {
-            List<RecursoTecnologico> listaRecursos = new List<RecursoTecnologico>();
-            listaRecursos.Add(rt1);
-            listaRecursos.Add(rt2);
-            listaRecursos.Add(rt3);
-            listaRecursos.Add(rt4);
-            listaRecursos.Add(rt5);
-            listaRecursos.Add(rt6);
-            listaRecursos.Add(rt7);
-            listaRecursos.Add(rt8);
-            listaRecursos.Add(rt9);
-            listaRecursos.Add(rt10);
-            listaRecursos.Add(rt11);
-            listaRecursos.Add(rt12);
-            listaRecursos.Add(rt13);
-            listaRecursos.Add(rt14);
-            listaRecursos.Add(rt15);
-            listaRecursos.Add(rt16);
-            listaRecursos.Add(rt17);
-            listaRecursos.Add(rt18);
-            listaRecursos.Add(rt19);
-            listaRecursos.Add(rt20);
-            listaRecursos.Add(rt21);
-
-            return listaRecursos;
-        }
-
         public static Sesion loadSesion() { return sesionActual; }
 
         public static List<PersonalCientifico> loadCientificos()

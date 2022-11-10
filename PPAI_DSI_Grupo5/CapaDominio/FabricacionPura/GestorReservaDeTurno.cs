@@ -27,6 +27,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
         private List<Turno> listaTurnosRTSeleccionado;
         private RegistrarTurno ventanaRegistrarTurno;
         private AltaTurno ventanaAltaTurno;
+        private List<Marca> marcas;
         private InterfazEmailReserva interfazNotificacion;
         private AsignacionCientificoCI asignCientificoCI;
         private DateTime fechaHoraActual;
@@ -41,9 +42,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
             this.sesionActual = sesion;
             altaTurno.setGestor(this);
 
-            listaTipoRTDisponibles = LoadData.loadTiposRecursoTecnologico();
-            listaRecursoTecnologicosDisponibles = LoadData.loadRecursosTecnologicos();
-            listaEstados = LoadData.loadEstados();
+            listaTipoRTDisponibles = TipoRecursoTecnologicoDAO.getTipoRecursos();
+            listaRecursoTecnologicosDisponibles = RecursoTecnologicoDAO.getRecursosDisponibles();
+            listaEstados = EstadoDAO.getEstados();
+            marcas = MarcaDAO.getMarcas();
         }
 
         // --> Nueva Reserva de Turno, llamada a boundary
@@ -94,7 +96,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
 
             foreach (RecursoTecnologico recurso in listaRecursosTecnologicosValidos)
             {
-                listaRecursosMuestra.Add(recurso.mostrarDatosDeRT(LoadData.loadMarcas()));
+                listaRecursosMuestra.Add(recurso.mostrarDatosDeRT(marcas));
             }
 
             agruparRTPorCentroInvestigacion();

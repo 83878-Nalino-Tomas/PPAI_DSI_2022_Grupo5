@@ -13,7 +13,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         internal static List<CambioEstadoRT> getCambiosParaRecurso(int recurso)
         {
             ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM Turno WHERE recursoTecnologico = {recurso}";
+            string sql = $"SELECT * FROM CambioEstado WHERE recursoTecnologico = {recurso}";
 
             DataTable res = db.Query(sql);
 

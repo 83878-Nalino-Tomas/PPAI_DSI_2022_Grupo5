@@ -22,10 +22,10 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             for (int i = 0; i < res.Rows.Count; i++)
             {
                 Turno turno = new Turno();
-                turno.fechaGeneracion = DateTime.Parse(res.Rows[i]["nombre"].ToString());
-                turno.fechaHoraInicio = DateTime.Parse(res.Rows[i]["nombre"].ToString());
-                turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["nombre"].ToString());
-                turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["nombre"].ToString());
+                turno.fechaGeneracion = DateTime.Parse(res.Rows[i]["fechaGeneracion"].ToString());
+                turno.fechaHoraInicio = DateTime.Parse(res.Rows[i]["fechaHoraInicio"].ToString());
+                turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["fechaHoraFin"].ToString());
+                turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["diaSemana"].ToString());
                 turnos.Add(turno);
             }
             return turnos;

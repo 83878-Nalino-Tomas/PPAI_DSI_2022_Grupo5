@@ -18,6 +18,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.descripcion = descripcion;
         }
 
+        public TipoRecursoTecnologico()
+        {
+        }
+
         // --> Retorna True si el tipo pasado como parametro coincide con el TipoRecursoTecnologico
         public bool esSeleccionado(string tipo)
         {

@@ -68,10 +68,12 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public void mostrarCentroDeInvest()
         {
             //Esto se realiza porque los datos estan Harcodeados
-            List<CentroDeInvestigacion> centrosInvestigacion = LoadData.listarCentros();
-            centrosInvestigacion[0].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC1());
-            centrosInvestigacion[1].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC2());
-            centrosInvestigacion[2].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC3());
+            //List<CentroDeInvestigacion> centrosInvestigacion = LoadData.listarCentros();
+            //centrosInvestigacion[0].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC1());
+            //centrosInvestigacion[1].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC2());
+            //centrosInvestigacion[2].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC3());
+
+            List<CentroDeInvestigacion> centrosInvestigacion = null;
 
             foreach (CentroDeInvestigacion centro in centrosInvestigacion)
             {

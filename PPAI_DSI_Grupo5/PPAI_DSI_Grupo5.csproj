@@ -66,9 +66,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatos\CambioEstadoDAO.cs" />
+    <Compile Include="CapaDatos\CentroDeInvestigacionDAO.cs" />
     <Compile Include="CapaDatos\ConexionDb.cs" />
+    <Compile Include="CapaDatos\EstadoDAO.cs" />
     <Compile Include="CapaDatos\LoadData.cs" />
+    <Compile Include="CapaDatos\MarcaDAO.cs" />
+    <Compile Include="CapaDatos\ModeloDAO.cs" />
+    <Compile Include="CapaDatos\RecursoTecnologicoDAO.cs" />
     <Compile Include="CapaDatos\SesionDAO.cs" />
+    <Compile Include="CapaDatos\TipoRecursoTecnologicoDAO.cs" />
+    <Compile Include="CapaDatos\TurnoDAO.cs" />
     <Compile Include="CapaDatos\UsuarioDAO.cs" />
     <Compile Include="CapaDominio\Entidad\AsignacionCientificoCI.cs" />
     <Compile Include="CapaDominio\Entidad\AsignacionDirectorCI.cs" />

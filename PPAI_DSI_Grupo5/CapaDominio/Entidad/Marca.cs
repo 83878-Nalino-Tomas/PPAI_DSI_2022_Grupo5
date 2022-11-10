@@ -5,8 +5,12 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Marca
     {
         //ATRIBUTOS
-        private string nombre;
-        private List<Modelo> modelos;
+        public string nombre { get; set; }
+        public List<Modelo> modelos { get; set; }
+
+        public Marca()
+        {
+        }
 
         //METODOS
 

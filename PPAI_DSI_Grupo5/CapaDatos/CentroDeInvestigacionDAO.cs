@@ -1,18 +1,18 @@
-﻿using PPAI_DSI_Grupo5.CapaDominio.Entidad;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PPAI_DSI_Grupo5.CapaDatos
 {
-    internal class EstadoDAO
+    internal class CentroDeInvestigacionDAO
     {
-        internal static Estado getEstado(string estadoSelec)
+        internal static Estado getCentro(string centro)
         {
 
             ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM Estado WHERE idEstado = {estadoSelec} AND ambito = 'RT'";
+            string sql = $"SELECT * FROM Estado WHERE idEstado = 'centro}
 
             DataTable res = db.Query(sql);
 
@@ -30,7 +30,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
 
         }
 
-        internal static List<Estado> getEstados()
+        internal static List<Estado> getCentros()
         {
 
             ConexionDb db = new ConexionDb();
