@@ -22,6 +22,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 Modelo modelo = new Modelo();
                 modelo.nombre = res.Rows[i]["nombre"].ToString();
                 modelo.descripcion = res.Rows[i]["descripcion"].ToString();
+                modelo.marca = res.Rows[i]["marca"].ToString();
                 modelos.Add(modelo);
             }
             return modelos.First();
@@ -41,6 +42,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 Modelo modelo = new Modelo();
                 modelo.nombre = res.Rows[i]["nombre"].ToString();
                 modelo.descripcion = res.Rows[i]["descripcion"].ToString();
+                modelo.marca = res.Rows[i]["marca"].ToString();
                 modelos.Add(modelo);
             }
             return modelos;

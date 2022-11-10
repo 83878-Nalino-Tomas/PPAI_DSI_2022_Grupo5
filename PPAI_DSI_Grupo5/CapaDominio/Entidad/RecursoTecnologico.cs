@@ -55,40 +55,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         }
 
         // --> Retorna clase de fabricacion pura para los datos necesarios
-        public RecursoTecnologicoMuestra mostrarDatosDeRT(List<Marca> marcas)
+        public RecursoTecnologicoMuestra mostrarDatosDeRT()
         {
-            int nroInv = this.getNumeroRT();
-            mostrarCentroDeInvest();
-            List<String> modeloYMarca = mostrarMarcaYModelo();
             string nombreEstado = getEstadoRT();
 
-            return new RecursoTecnologicoMuestra(centroInvestigacion, nroInv, modeloYMarca[1], modeloYMarca[0], nombreEstado);
-        }
-
-        public void mostrarCentroDeInvest()
-        {
-            //Esto se realiza porque los datos estan Harcodeados
-            //List<CentroDeInvestigacion> centrosInvestigacion = LoadData.listarCentros();
-            //centrosInvestigacion[0].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC1());
-            //centrosInvestigacion[1].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC2());
-            //centrosInvestigacion[2].setRecursosTecnologicos(LoadData.loadRecursosTecnologicosC3());
-
-            List<CentroDeInvestigacion> centrosInvestigacion = null;
-
-            foreach (CentroDeInvestigacion centro in centrosInvestigacion)
-            {
-                if (centro.obtenerCIdeRecursoTecnologico(this) != null)
-                {
-                    centroInvestigacion = centro.obtenerCIdeRecursoTecnologico(this);
-                }
-            }
-        }
-
-        // --> Retorna el modelo y la marca
-        public List<String> mostrarMarcaYModelo()
-        {
-            List<String> modeloYMarca = this.modeloDelRT.obtenerModeloYMarca();
-            return modeloYMarca;
+            return new RecursoTecnologicoMuestra(centroInvestigacion, numeroRT, modeloDelRT.nombre, modeloDelRT.marca, nombreEstado);
         }
 
         // --> Retorna True si esta asignado y es activo

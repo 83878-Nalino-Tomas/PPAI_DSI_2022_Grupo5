@@ -1,4 +1,5 @@
-﻿using PPAI_DSI_Grupo5.CapaDominio.FabricacionPura;
+﻿using PPAI_DSI_Grupo5.CapaDatos;
+using PPAI_DSI_Grupo5.CapaDominio.FabricacionPura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Turno
     {
         //ATRIBUTOS
+        public int id { get; set; }
         public DateTime fechaGeneracion { get; set; }
         public DayOfWeek diaSemana { get; set; }
         public DateTime fechaHoraInicio { get; set; }
@@ -42,11 +44,14 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         //--> Se encarga de efectuar la reserva del turno
         public void reservar(Estado est)
         {
-            cambioEstadoTurno.Last().FechaHoraHasta = DateTime.Now;
+            var cambioEstadoAnterior = cambioEstadoTurno.Last();
+            cambioEstadoAnterior.FechaHoraHasta = DateTime.Now;
 
-            var nuevoCambioEstado = new CambioEstadoTurno(this.fechaHoraInicio, est);
-
+            var nuevoCambioEstado = new CambioEstadoTurno(DateTime.Now, est);
             cambioEstadoTurno.Add(nuevoCambioEstado);
+
+            CambioEstadoDAO.UpdateCambioTurno(this, cambioEstadoAnterior);
+            CambioEstadoDAO.InsertCambioTurno(this, est);
 
         }
 

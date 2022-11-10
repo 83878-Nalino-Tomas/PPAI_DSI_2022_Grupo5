@@ -6,7 +6,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class CentroDeInvestigacion
     {
         //ATRIBUTOS
-        private string nombre;
+        public string nombre { get; set; }
         private string sigla;
         private string direccion;
         private string edificio;
@@ -19,11 +19,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         private string reglamento;
         private string caracteristicasGenerales;
         private DateTime fechaAlta;
-        private int tiempoAntelacionReserva;
+        public int tiempoAntelacionReserva { get; set; }
         private DateTime fechaBaja;
         private string motivoBaja;
-        private List<RecursoTecnologico> recursosTecnologicos;
-        private List<AsignacionCientificoCI> cientificos;
+        public List<AsignacionCientificoCI> cientificos { get; set; }
         private List<AsignacionDirectorCI> directorCI;
 
 
@@ -36,18 +35,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             this.sigla = sigla;
             this.direccion = direccion;
             this.tiempoAntelacionReserva = tiempoAntelacionReserva;
-            this.recursosTecnologicos = recursosTecnologicos;
             this.cientificos = cientificos;
         }
 
-        // --> Retorna el CI del recurso o null de no encontrarse
-        public CentroDeInvestigacion obtenerCIdeRecursoTecnologico(RecursoTecnologico recurso)
+        public CentroDeInvestigacion()
         {
-            if (recursosTecnologicos.Contains(recurso))
-            {
-                return this;
-            }
-            return null;
         }
         
         // --> Retorna True si el cientifico esta asignado y activo
@@ -78,11 +70,6 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 
         // --> Getters&Setters
         public string getNombre() { return nombre; }
-
-        public void setRecursosTecnologicos(List<RecursoTecnologico> recursos)
-        {
-            recursosTecnologicos = recursos;
-        }
 
         public int getTiempoAntelacionReserva() { return tiempoAntelacionReserva; }
     }

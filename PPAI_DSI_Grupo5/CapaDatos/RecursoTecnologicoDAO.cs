@@ -23,6 +23,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 recurso.modeloDelRT = ModeloDAO.getModelo(res.Rows[i]["modeloDelRT"].ToString());
                 recurso.turnos = TurnoDAO.getTurnosParaRecurso(recurso.numeroRT);
                 recurso.cambioEstadoRT = CambioEstadoDAO.getCambiosParaRecurso(recurso.numeroRT);
+                recurso.centroInvestigacion = CentroDeInvestigacionDAO.getCentro(res.Rows[i]["centroInvestigacion"].ToString());
                 recursos.Add(recurso);
             }
             return recursos;

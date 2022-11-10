@@ -49,6 +49,22 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             }
         }
 
+        public void NonQuery(string sql)
+        {
+            Connect(sql);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+                Disconnect();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         public void Del_Upd(string sql)
         {
             Connect(sql);

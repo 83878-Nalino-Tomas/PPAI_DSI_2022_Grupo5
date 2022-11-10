@@ -9,9 +9,9 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class CambioEstadoTurno
     {
         //ATRIBUTOS
-        private DateTime fechaHoraDesde;
-        private DateTime fechaHoraHasta;
-        private Estado estado;
+        public DateTime fechaHoraDesde { get; set; }
+        public DateTime fechaHoraHasta { get; set; }
+        public Estado estado { get; set; }
 
         //METODOS
 
@@ -28,6 +28,10 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         {
             this.fechaHoraDesde = fechaHoraDesde;
             this.estado = estado;
+        }
+
+        public CambioEstadoTurno()
+        {
         }
 
 

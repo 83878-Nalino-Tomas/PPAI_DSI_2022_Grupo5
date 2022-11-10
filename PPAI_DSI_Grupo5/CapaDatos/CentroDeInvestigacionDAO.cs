@@ -1,54 +1,52 @@
-﻿using System;
+﻿using PPAI_DSI_Grupo5.CapaDominio.Entidad;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PPAI_DSI_Grupo5.CapaDatos
 {
     internal class CentroDeInvestigacionDAO
     {
-        internal static Estado getCentro(string centro)
+        internal static CentroDeInvestigacion getCentro(string centroName)
         {
 
             ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM Estado WHERE idEstado = 'centro}
+            string sql = $"SELECT * FROM CentroDeInvestigacion WHERE nombre = '{centroName}'";
 
             DataTable res = db.Query(sql);
 
-            List<Estado> estados = new List<Estado>();
+            List<CentroDeInvestigacion> centros = new List<CentroDeInvestigacion>();
 
             for (int i = 0; i < res.Rows.Count; i++)
             {
-                Estado estado = new Estado();
-                estado.nombre = res.Rows[i]["nombre"].ToString();
-                estado.descripcion = res.Rows[i]["descripcion"].ToString();
-                estado.ambito = res.Rows[i]["ambito"].ToString();
-                estados.Add(estado);
+                CentroDeInvestigacion centro = new CentroDeInvestigacion();
+                centro.nombre = res.Rows[i]["nombre"].ToString();
+                centro.tiempoAntelacionReserva = int.Parse(res.Rows[i]["tiempoAntelacionReserva"].ToString());
+                centro.cientificos = AsignacionCientificoCIDAO.getAsignacionesPorCentro(centro.nombre);
+                centros.Add(centro);
             }
-            return estados.First();
+            return centros.First();
 
         }
 
-        internal static List<Estado> getCentros()
+        internal static List<CentroDeInvestigacion> getCentros()
         {
 
             ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM Estado";
+            string sql = $"SELECT * FROM CentroDeInvestigacion";
 
             DataTable res = db.Query(sql);
 
-            List<Estado> estados = new List<Estado>();
+            List<CentroDeInvestigacion> centros = new List<CentroDeInvestigacion>();
 
             for (int i = 0; i < res.Rows.Count; i++)
             {
-                Estado estado = new Estado();
-                estado.nombre = res.Rows[i]["nombre"].ToString();
-                estado.descripcion = res.Rows[i]["descripcion"].ToString();
-                estado.ambito = res.Rows[i]["ambito"].ToString();
-                estados.Add(estado);
+                CentroDeInvestigacion centro = new CentroDeInvestigacion();
+                centro.nombre = res.Rows[i]["nombre"].ToString();
+                centro.tiempoAntelacionReserva = int.Parse(res.Rows[i]["tiempoAntelacionReserva"].ToString());
+                centros.Add(centro);
             }
-            return estados;
+            return centros;
 
         }
     }

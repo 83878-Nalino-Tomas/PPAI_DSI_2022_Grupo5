@@ -52,6 +52,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 user.nombreUsuario = res.Rows[i]["nombreUsuario"].ToString();
                 user.clave = res.Rows[i]["clave"].ToString();
                 user.habilitado = bool.Parse(res.Rows[i]["habilitado"].ToString());
+                user.cientifico = PersonalCientificoDAO.getCientifico(int.Parse(res.Rows[i]["cientifico"].ToString()));
                 usuarios.Add(user);
             }
             return usuarios;
@@ -72,6 +73,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 user.nombreUsuario = res.Rows[i]["nombreUsuario"].ToString();
                 user.clave = res.Rows[i]["clave"].ToString();
                 user.habilitado = bool.Parse(res.Rows[i]["habilitado"].ToString());
+                user.cientifico = PersonalCientificoDAO.getCientifico(int.Parse(res.Rows[i]["cientifico"].ToString()));
                 usuarios.Add(user);
             }
             return usuarios.First();

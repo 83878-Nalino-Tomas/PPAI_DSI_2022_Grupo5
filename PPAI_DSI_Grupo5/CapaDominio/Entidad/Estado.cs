@@ -5,6 +5,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
     public class Estado
     {
         //ATRIBUTOS
+        public int idEstado { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string ambito { get; set; }

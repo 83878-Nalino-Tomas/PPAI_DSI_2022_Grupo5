@@ -8,7 +8,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
 {
     internal class EstadoDAO
     {
-        internal static Estado getEstado(string estadoSelec)
+        internal static Estado getEstadoRT(string estadoSelec)
         {
 
             ConexionDb db = new ConexionDb();
@@ -21,6 +21,30 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             for (int i = 0; i < res.Rows.Count; i++)
             {
                 Estado estado = new Estado();
+                estado.idEstado = int.Parse(res.Rows[i]["idEstado"].ToString());
+                estado.nombre = res.Rows[i]["nombre"].ToString();
+                estado.descripcion = res.Rows[i]["descripcion"].ToString();
+                estado.ambito = res.Rows[i]["ambito"].ToString();
+                estados.Add(estado);
+            }
+            return estados.First();
+
+        }
+
+        internal static Estado getEstadoTurno(string estadoSelec)
+        {
+
+            ConexionDb db = new ConexionDb();
+            string sql = $"SELECT * FROM Estado WHERE idEstado = {estadoSelec} AND ambito = 'Turno'";
+
+            DataTable res = db.Query(sql);
+
+            List<Estado> estados = new List<Estado>();
+
+            for (int i = 0; i < res.Rows.Count; i++)
+            {
+                Estado estado = new Estado();
+                estado.idEstado = int.Parse(res.Rows[i]["idEstado"].ToString());
                 estado.nombre = res.Rows[i]["nombre"].ToString();
                 estado.descripcion = res.Rows[i]["descripcion"].ToString();
                 estado.ambito = res.Rows[i]["ambito"].ToString();
@@ -43,6 +67,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             for (int i = 0; i < res.Rows.Count; i++)
             {
                 Estado estado = new Estado();
+                estado.idEstado = int.Parse(res.Rows[i]["idEstado"].ToString());
                 estado.nombre = res.Rows[i]["nombre"].ToString();
                 estado.descripcion = res.Rows[i]["descripcion"].ToString();
                 estado.ambito = res.Rows[i]["ambito"].ToString();

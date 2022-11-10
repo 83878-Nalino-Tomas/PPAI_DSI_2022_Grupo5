@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PPAI_DSI_Grupo5.CapaDatos
 {
@@ -22,10 +19,35 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             for (int i = 0; i < res.Rows.Count; i++)
             {
                 Turno turno = new Turno();
+                turno.id = int.Parse(res.Rows[i]["id"].ToString());
                 turno.fechaGeneracion = DateTime.Parse(res.Rows[i]["fechaGeneracion"].ToString());
                 turno.fechaHoraInicio = DateTime.Parse(res.Rows[i]["fechaHoraInicio"].ToString());
                 turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["fechaHoraFin"].ToString());
                 turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["diaSemana"].ToString());
+                turno.cambioEstadoTurno = CambioEstadoDAO.getCambiosParaTurno(int.Parse(res.Rows[i]["id"].ToString()));
+                turnos.Add(turno);
+            }
+            return turnos;
+        }
+
+        internal static List<Turno> getTurnosParaAsignacion(int v)
+        {
+            ConexionDb db = new ConexionDb();
+            string sql = $"SELECT * FROM Turno WHERE asignacionCI = {v}";
+
+            DataTable res = db.Query(sql);
+
+            List<Turno> turnos = new List<Turno>();
+
+            for (int i = 0; i < res.Rows.Count; i++)
+            {
+                Turno turno = new Turno();
+                turno.id = int.Parse(res.Rows[i]["id"].ToString());
+                turno.fechaGeneracion = DateTime.Parse(res.Rows[i]["fechaGeneracion"].ToString());
+                turno.fechaHoraInicio = DateTime.Parse(res.Rows[i]["fechaHoraInicio"].ToString());
+                turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["fechaHoraFin"].ToString());
+                turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["diaSemana"].ToString());
+                turno.cambioEstadoTurno = CambioEstadoDAO.getCambiosParaTurno(int.Parse(res.Rows[i]["id"].ToString()));
                 turnos.Add(turno);
             }
             return turnos;

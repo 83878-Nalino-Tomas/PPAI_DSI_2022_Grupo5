@@ -98,12 +98,11 @@ namespace PPAI_DSI_Grupo5.Presentacion.ABM_Turno
                     calendario.AddDateInfo(item);
                 }
             }
-            List<String> marcaYModelo = recurso.mostrarMarcaYModelo();
             txtTipoRecurso.Text = recurso.getTipoRecurso();
             txtEstado.Text = recurso.getEstadoRT();
             txtCentro.Text = recurso.getCentro();
-            txtMarca.Text = marcaYModelo[1];
-            txtModelo.Text = marcaYModelo[0];
+            txtMarca.Text = recurso.modeloDelRT.marca;
+            txtModelo.Text = recurso.modeloDelRT.nombre;
             txtRecurso.Text = recurso.getNumeroRT().ToString();
         }
 

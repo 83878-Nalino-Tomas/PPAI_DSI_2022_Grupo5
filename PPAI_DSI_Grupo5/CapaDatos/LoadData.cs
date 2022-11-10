@@ -55,9 +55,9 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         public static CambioEstadoTurno cet3 = new CambioEstadoTurno(fechaInicio, estadoTReservado);
 
         //Cambios de estado RT
-        public static CambioEstadoRT cert1 = new CambioEstadoRT(fechaInicio, fechaFin, estadoRT1);
-        public static CambioEstadoRT cert2 = new CambioEstadoRT(fechaInicio, fechaFin, estadoRT2);
-        public static CambioEstadoRT cert3 = new CambioEstadoRT(fechaInicio, fechaFin, estadoRT3);
+        public static CambioEstadoTurno cert1 = new CambioEstadoTurno(fechaInicio, fechaFin, estadoRT1);
+        public static CambioEstadoTurno cert2 = new CambioEstadoTurno(fechaInicio, fechaFin, estadoRT2);
+        public static CambioEstadoTurno cert3 = new CambioEstadoTurno(fechaInicio, fechaFin, estadoRT3);
 
         //Marcas en el sistema
         public static Marca marca1 = new Marca("Nikon", new List<Modelo> { modelo, modelo1});
@@ -186,9 +186,9 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             return listaCambioEstados;
         }
 
-        public static List<CambioEstadoRT> crearCambioEstadoRTsDisponible()
+        public static List<CambioEstadoTurno> crearCambioEstadoRTsDisponible()
         {
-            List<CambioEstadoRT> listaCambioEstados = new List<CambioEstadoRT>();
+            List<CambioEstadoTurno> listaCambioEstados = new List<CambioEstadoTurno>();
             listaCambioEstados.Add(cert3);
             listaCambioEstados.Add(cert1);
             listaCambioEstados.Add(cert2);
@@ -197,9 +197,9 @@ namespace PPAI_DSI_Grupo5.CapaDatos
 
         }
 
-        public static List<CambioEstadoRT> crearCambioEstadoRTsReservable()
+        public static List<CambioEstadoTurno> crearCambioEstadoRTsReservable()
         {
-            List<CambioEstadoRT> listaCambioEstados = new List<CambioEstadoRT>();
+            List<CambioEstadoTurno> listaCambioEstados = new List<CambioEstadoTurno>();
             listaCambioEstados.Add(cert1);
             listaCambioEstados.Add(cert2);
             listaCambioEstados.Add(cert3);

@@ -9,6 +9,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         //ATRIBUTOS
         public string nombre { get; set; }
         public string descripcion { get; set; }
+        public string marca { get; set; }
 
 
         //METODOS
@@ -21,24 +22,6 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 
         public Modelo()
         {
-        }
-
-        // --> Devuelve el nombre de la marca de estre producto
-        public List<String> obtenerModeloYMarca()
-        {
-            //Primero modelo y despues marca
-            var modeloYMarca = new List<String>();
-            modeloYMarca.Add(nombre);
-            var marcas = LoadData.loadMarcas();
-            foreach (var marca in marcas)
-            {
-                if (marca.esDeEstaMarca(this))
-                {
-                    modeloYMarca.Add(marca.getNombre());
-                }
-            }
-
-            return modeloYMarca;
         }
 
         // --> Getters&Setters

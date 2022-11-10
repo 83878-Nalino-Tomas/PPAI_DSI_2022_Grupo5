@@ -3,13 +3,17 @@
     public class PersonalCientifico
     {
         //ATRIBUTOS
-        private int legajo;
+        public int legajo { get; set; }
         private string nombre;
         private string apellido;
         private double documento;
         private string correoInstitucional;
-        private string correoPersonal;
+        public string correoPersonal { get; set; }
         private double telefono;
+
+        public PersonalCientifico()
+        {
+        }
 
         //METODOS
 
