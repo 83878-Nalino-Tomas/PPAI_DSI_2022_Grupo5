@@ -275,7 +275,8 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
                 {
                     if (estado.esReservado())
                     {
-                        recursoTecnologicoSeleccionado.reservarTurno(turnoSeleccionado, estado, cientificoLogueado);
+                        //recursoTecnologicoSeleccionado.reservarTurno(turnoSeleccionado, estado, cientificoLogueado);
+                        turnoSeleccionado.generarReservaRTSeleccionado(recursoTecnologicoSeleccionado, turnoSeleccionado);
                     }
                 }
             }

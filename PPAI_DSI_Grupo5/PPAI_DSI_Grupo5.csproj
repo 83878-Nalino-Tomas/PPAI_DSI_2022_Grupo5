@@ -71,7 +71,6 @@
     <Compile Include="CapaDatos\CentroDeInvestigacionDAO.cs" />
     <Compile Include="CapaDatos\ConexionDb.cs" />
     <Compile Include="CapaDatos\EstadoDAO.cs" />
-    <Compile Include="CapaDatos\LoadData.cs" />
     <Compile Include="CapaDatos\MarcaDAO.cs" />
     <Compile Include="CapaDatos\ModeloDAO.cs" />
     <Compile Include="CapaDatos\PersonalCientificoDAO.cs" />
@@ -89,6 +88,9 @@
     <Compile Include="CapaDominio\Entidad\CentroDeInvestigacion.cs" />
     <Compile Include="CapaDominio\Entidad\Estado.cs" />
     <Compile Include="CapaDominio\Entidad\Facultad.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\Disponible.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\DisponibleRT.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\EnMantenimiento.cs" />
     <Compile Include="CapaDominio\FabricacionPura\GestorReservaDeTurno.cs" />
     <Compile Include="CapaDominio\Entidad\HorarioRT.cs" />
     <Compile Include="CapaDominio\Entidad\Mantenimiento.cs" />
@@ -97,11 +99,14 @@
     <Compile Include="CapaDominio\Entidad\PersonalCientifico.cs" />
     <Compile Include="CapaDominio\Entidad\RecursoTecnologico.cs" />
     <Compile Include="CapaDominio\FabricacionPura\InterfazEmailReserva.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\MantenimientoCorrectivo.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\Pendiente.cs" />
     <Compile Include="CapaDominio\FabricacionPura\RecursoTecnologicoMuestra.cs" />
     <Compile Include="CapaDominio\Entidad\Sesion.cs" />
     <Compile Include="CapaDominio\Entidad\TipoRecursoTecnologico.cs" />
     <Compile Include="CapaDominio\Entidad\Turno.cs" />
     <Compile Include="CapaDominio\Entidad\Usuario.cs" />
+    <Compile Include="CapaDominio\FabricacionPura\Reservado.cs" />
     <Compile Include="CapaDominio\FabricacionPura\TurnoModel.cs" />
     <Compile Include="CapaPresentacion\ABM Turno\ABMTurno.cs">
       <SubType>Form</SubType>

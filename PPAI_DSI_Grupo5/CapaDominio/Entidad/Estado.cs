@@ -2,7 +2,7 @@
 
 namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 {
-    public class Estado
+    public abstract class Estado
     {
         //ATRIBUTOS
         public int idEstado { get; set; }
@@ -38,5 +38,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 
         //-- > Getters&Setters
         public string getNombre() { return nombre; }
+
+        internal abstract void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado);
     }
 }

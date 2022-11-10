@@ -34,6 +34,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         {
         }
 
+        public CambioEstadoTurno(DateTime fecha)
+        {
+            this.fechaHoraDesde = fecha;
+        }
+
 
         // Corroboracion si es actual
         public bool esActual()

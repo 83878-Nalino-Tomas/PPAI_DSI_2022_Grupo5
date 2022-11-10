@@ -15,6 +15,8 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public DateTime fechaHoraFin { get; set; }
         public List<CambioEstadoTurno> cambioEstadoTurno { get; set; }
 
+        public Estado estado { get; set; }
+
         // --> Metodo Constructor
         public Turno(DateTime fechaGeneracion, DayOfWeek diaSemana, DateTime fechaHoraInicio, DateTime fechaHoraFin, List<CambioEstadoTurno> cambioEstadoTurno)
         {
@@ -59,6 +61,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public DateTime getfechaTurno()
         {
             return fechaHoraInicio;
+        }
+
+        internal void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado)
+        {
+            estado.generarReservaRTSeleccionado(recursoTecnologicoSeleccionado, turnoSeleccionado);
         }
     }
 }

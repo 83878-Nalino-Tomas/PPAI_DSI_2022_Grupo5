@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 {
@@ -72,6 +73,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public string getNombre() { return nombre; }
 
         public int getTiempoAntelacionReserva() { return tiempoAntelacionReserva; }
+
+        internal void asignarTurno(Turno turnoSeleccionado)
+        {
+            cientificos.Last().setTurno(turnoSeleccionado);
+        }
     }
 
 }

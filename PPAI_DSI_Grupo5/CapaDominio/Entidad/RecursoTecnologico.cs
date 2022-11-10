@@ -104,6 +104,12 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             centroInvestigacion.reservarTurnoCientifico(turnoSelecc, cientifico);
         }
 
+
+        internal void asignarTurno(Turno turnoSeleccionado)
+        {
+            centroInvestigacion.asignarTurno(turnoSeleccionado);
+        }
+
         // --> Getters&Setters
         public int getNumeroRT() { return numeroRT; }
         public string getTipoRecurso() { return tipoRecurso.getNombre(); }

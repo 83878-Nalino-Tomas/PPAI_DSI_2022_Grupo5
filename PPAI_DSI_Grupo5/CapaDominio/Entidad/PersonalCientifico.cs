@@ -1,4 +1,6 @@
-﻿namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
+﻿using System;
+
+namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
 {
     public class PersonalCientifico
     {
@@ -33,5 +35,9 @@
         // --> Getters&Setters
         public string getMail() { return correoPersonal; }
 
+        internal void asignarTurno(Turno turnoSeleccionado)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

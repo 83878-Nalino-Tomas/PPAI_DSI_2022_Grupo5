@@ -25,6 +25,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["fechaHoraFin"].ToString());
                 turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["diaSemana"].ToString());
                 turno.cambioEstadoTurno = CambioEstadoDAO.getCambiosParaTurno(int.Parse(res.Rows[i]["id"].ToString()));
+                turno.estado = EstadoDAO.getEstadoTurno(res.Rows[i]["estado"].ToString());
                 turnos.Add(turno);
             }
             return turnos;
@@ -48,6 +49,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 turno.fechaHoraFin = DateTime.Parse(res.Rows[i]["fechaHoraFin"].ToString());
                 turno.diaSemana = (DayOfWeek)int.Parse(res.Rows[i]["diaSemana"].ToString());
                 turno.cambioEstadoTurno = CambioEstadoDAO.getCambiosParaTurno(int.Parse(res.Rows[i]["id"].ToString()));
+                turno.estado = EstadoDAO.getEstadoTurno(res.Rows[i]["estado"].ToString());
                 turnos.Add(turno);
             }
             return turnos;
