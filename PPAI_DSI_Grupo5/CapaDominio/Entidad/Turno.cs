@@ -52,8 +52,8 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
             var nuevoCambioEstado = new CambioEstadoTurno(DateTime.Now, est);
             cambioEstadoTurno.Add(nuevoCambioEstado);
 
-            CambioEstadoDAO.UpdateCambioTurno(this, cambioEstadoAnterior);
-            CambioEstadoDAO.InsertCambioTurno(this, est);
+            CambioEstadoTurnoDAO.UpdateCambioTurno(this, cambioEstadoAnterior);
+            CambioEstadoTurnoDAO.InsertCambioTurno(this, est);
 
         }
 
@@ -66,6 +66,11 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         internal void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado)
         {
             estado.generarReservaRTSeleccionado(recursoTecnologicoSeleccionado, turnoSeleccionado);
+        }
+
+        internal void registrarReservaTurno()
+        {
+            estado.reservarTurno(this);
         }
     }
 }

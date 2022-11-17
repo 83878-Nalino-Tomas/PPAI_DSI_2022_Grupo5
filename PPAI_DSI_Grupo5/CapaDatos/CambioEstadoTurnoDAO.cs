@@ -2,38 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PPAI_DSI_Grupo5.CapaDatos
 {
-    internal class CambioEstadoDAO
+    internal class CambioEstadoTurnoDAO
     {
-        internal static List<CambioEstadoRT> getCambiosParaRecurso(int recurso)
-        {
-            ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM CambioEstado WHERE recursoTecnologico = {recurso}";
-
-            DataTable res = db.Query(sql);
-
-            List<CambioEstadoRT> cambios = new List<CambioEstadoRT>();
-
-            for (int i = 0; i < res.Rows.Count; i++)
-            {
-                CambioEstadoRT cambio = new CambioEstadoRT();
-                cambio.fechaHoraDesde = DateTime.Parse(res.Rows[i]["fechaHoraDesde"].ToString());
-                cambio.fechaHoraHasta = DateTime.Parse(res.Rows[i]["fechaHoraHasta"].ToString());
-                cambio.estado = EstadoDAO.getEstadoRT(res.Rows[i]["estado"].ToString());
-                cambios.Add(cambio);
-            }
-            return cambios;
-        }
-
         internal static List<CambioEstadoTurno> getCambiosParaTurno(int turno)
         {
             ConexionDb db = new ConexionDb();
-            string sql = $"SELECT * FROM CambioEstado WHERE turno = {turno}";
+            string sql = $"SELECT * FROM CambioEstadoTurno WHERE turno = {turno}";
 
             DataTable res = db.Query(sql);
 
@@ -60,7 +37,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         internal static void UpdateCambioTurno(Turno turno, CambioEstadoTurno cambioEstadoTurno)
         {
             ConexionDb db = new ConexionDb();
-            string sql = $"UPDATE CambioEstado SET fechaHoraHasta = '{cambioEstadoTurno.fechaHoraHasta}' WHERE turno = {turno.id} AND fechaHoraDesde = '{cambioEstadoTurno.fechaHoraDesde}'";
+            string sql = $"UPDATE CambioEstadoTurno SET fechaHoraHasta = '{cambioEstadoTurno.fechaHoraHasta}' WHERE turno = {turno.id} AND fechaHoraDesde = '{cambioEstadoTurno.fechaHoraDesde}'";
 
             db.NonQuery(sql);
         }
@@ -68,7 +45,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
         internal static void InsertCambioTurno(Turno turno, Estado est)
         {
             ConexionDb db = new ConexionDb();
-            string sql = $"INSERT INTO CambioEstado (fechaHoraDesde, estado, turno) VALUES ('{DateTime.Now}', {est.idEstado}, {turno.id})";
+            string sql = $"INSERT INTO CambioEstadoTurno (fechaHoraDesde, estado, turno) VALUES ('{DateTime.Now}', {est.idEstado}, {turno.id})";
 
             db.NonQuery(sql);
         }

@@ -78,7 +78,6 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
                 foreach (Turno turno in turnos)
                     if (turno.validarFechaHoraInicio(date))
                     {
-
                         turnosDisponibles.Add(turno);
                     }
             }

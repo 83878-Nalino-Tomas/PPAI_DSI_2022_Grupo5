@@ -11,29 +11,30 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
     internal class Disponible:Estado
     {
         string esDisponible;
-        internal override void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado)
+        internal override void reservarTurno(Turno turno)
         {
-            recursoTecnologicoSeleccionado.asignarTurno(turnoSeleccionado);
-            var cambio = turnoSeleccionado.cambioEstadoTurno;
             CambioEstadoTurno cambioActual = new CambioEstadoTurno();
-            foreach (var item in cambio)
+            var fecha = DateTime.Now;
+
+            var cambios = turno.cambioEstadoTurno;
+            
+            foreach (var cambio in cambios)
             {
-                if (item.esActual())
+                if (cambio.esActual())
                 {
-                    cambioActual = item;
+                    cambio.fechaHoraHasta = fecha;
+                    cambioActual = cambio;
                 }
             }
-            var fecha = DateTime.Now;
-            cambioActual.fechaHoraHasta = fecha;
 
-            Estado nuevoEstado = new Reservado();
+            Reservado nuevoEstado = new Reservado();
             CambioEstadoTurno nuevoCambio = new CambioEstadoTurno(fecha);
 
-            turnoSeleccionado.estado = nuevoEstado;
-            turnoSeleccionado.cambioEstadoTurno.Add(cambioActual);
+            turno.estado = nuevoEstado;
+            turno.cambioEstadoTurno.Add(nuevoCambio);
 
-            CambioEstadoDAO.UpdateCambioTurno(turnoSeleccionado, cambioActual);
-            CambioEstadoDAO.InsertCambioTurno(turnoSeleccionado, nuevoEstado);
+            CambioEstadoTurnoDAO.UpdateCambioTurno(turno, cambioActual);
+            CambioEstadoTurnoDAO.InsertCambioTurno(turno, nuevoEstado);
         }
 
         public Disponible()

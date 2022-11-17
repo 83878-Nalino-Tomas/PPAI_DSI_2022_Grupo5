@@ -9,9 +9,6 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string ambito { get; set; }
-        private string esCancelable;
-        private string es_Reservable;
-
 
         //METODOS
 
@@ -39,6 +36,8 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         //-- > Getters&Setters
         public string getNombre() { return nombre; }
 
-        internal abstract void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado);
+        internal void generarReservaRTSeleccionado(RecursoTecnologico recursoTecnologicoSeleccionado, Turno turnoSeleccionado) { }
+
+        internal virtual void reservarTurno(Turno turno) { }
     }
 }

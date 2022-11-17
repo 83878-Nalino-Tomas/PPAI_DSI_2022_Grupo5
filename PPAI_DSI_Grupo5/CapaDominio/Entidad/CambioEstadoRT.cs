@@ -28,6 +28,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.Entidad
         // --> Devuelve si es actual
         public bool esActual()
         {
+            return this.fechaHoraHasta.ToShortDateString() == "1/1/0001";
             if (this.fechaHoraDesde < DateTime.Now && DateTime.Now < this.fechaHoraHasta)
             {
                 return true;

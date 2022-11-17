@@ -67,7 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatos\AsignacionCientificoCIDAO.cs" />
-    <Compile Include="CapaDatos\CambioEstadoDAO.cs" />
+    <Compile Include="CapaDatos\CambioEstadoRTDAO.cs" />
+    <Compile Include="CapaDatos\CambioEstadoTurnoDAO.cs" />
     <Compile Include="CapaDatos\CentroDeInvestigacionDAO.cs" />
     <Compile Include="CapaDatos\ConexionDb.cs" />
     <Compile Include="CapaDatos\EstadoDAO.cs" />
