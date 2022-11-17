@@ -134,7 +134,7 @@ namespace PPAI_DSI_Grupo5.CapaDatos
                 switch (idEstado)
                 {
                     case 1:
-                        estado = new DisponibleRT();
+                        estado = new Disponible();
                         break;
 
                     case 2:

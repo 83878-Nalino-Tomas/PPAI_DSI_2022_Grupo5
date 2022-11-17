@@ -269,18 +269,7 @@ namespace PPAI_DSI_Grupo5.CapaDominio.FabricacionPura
         // --> Registra la reserva de un turnoSeleccionado, en un estado para un cientifico
         public void registrarReservaRTSeleccionado()
         {
-            //foreach (var estado in listaEstados)
-            //{
-            //    if (estado.esAmbitoTurno())
-            //    {
-            //        if (estado.esReservado())
-            //        {
-                        //recursoTecnologicoSeleccionado.reservarTurno(turnoSeleccionado, estado, cientificoLogueado);
-                        //turnoSeleccionado.generarReservaRTSeleccionado(recursoTecnologicoSeleccionado, turnoSeleccionado);
             turnoSeleccionado.registrarReservaTurno();
-            //        }
-            //    }
-            //}
         }
 
         // --> Generacion de mail

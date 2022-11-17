@@ -48,6 +48,10 @@ namespace PPAI_DSI_Grupo5.CapaDatos
             string sql = $"INSERT INTO CambioEstadoTurno (fechaHoraDesde, estado, turno) VALUES ('{DateTime.Now}', {est.idEstado}, {turno.id})";
 
             db.NonQuery(sql);
+
+            sql = $"UPDATE Turno SET estado = '{est.idEstado}' WHERE id = {turno.id}";
+
+            db.NonQuery(sql);
         }
     }
 }
